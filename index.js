@@ -15,12 +15,18 @@ app.get('/', (req, res) => {
 })
 
 app.post('/sms', (req, res) => {
+  console.log(`sending message from ${twilioPhone} to ${alertPhone}`)
+
   client.messages.create({
     from: twilioPhone,
     to: alertPhone,
     body: 'this is a test'
   })
-  .then((message) => console.log(message.sid))
+  .then((message) => {
+    console.log(message.sid)
+    res.writeHead(200)
+    res.end(message.sid)
+  })
 })
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
