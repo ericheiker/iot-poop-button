@@ -6,9 +6,21 @@
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["node", "express", "heroku"],
   "env": {
-    "SECRET_KEY": {
-      "description": "The secret key.",
-      "generator": "secret"
+    "TWILIO_ACCOUNT": {
+      "description": "Your Twilio account SID",
+      "required": "true"
+    },
+    "TWILIO_TOKEN": {
+      "description": "Your Twilio auth token",
+      "required": "true"
+    },
+    "TWILIO_PHONE": {
+      "description": "Your Twilio phone number",
+      "required": "true"
+    },
+    "ALERT_PHONE": {
+      "description": "Your personal phone number",
+      "required": "true"
     }
-  },
+  }
 }
