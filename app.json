@@ -1,0 +1,7 @@
+{
+  "name": "IoT Poop Button",
+  "description": "https://www.twilio.com/blog/2018/03/iot-poop-button-python-twilio-aws.html",
+  "repository": "https://github.com/ericheiker/iot-poop-button",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
