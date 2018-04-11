@@ -11,10 +11,10 @@ const twilioPhone = process.env.TWILIO_PHONE
 const client = new twilio(accountSid, authToken)
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Server is up and running')
 })
 
-app.post('/sms', (req, res) => {
+app.post('/alert', (req, res) => {
   console.log(`sending message from ${twilioPhone} to ${alertPhone}`)
 
   client.messages.create({
@@ -26,6 +26,11 @@ app.post('/sms', (req, res) => {
     console.log(message.sid)
     res.writeHead(200)
     res.end(message.sid)
+  })
+  .catch(error => {
+    console.log(error.response.message)
+    res.writeHead(500)
+    res.end(error.response.message)
   })
 })
 
