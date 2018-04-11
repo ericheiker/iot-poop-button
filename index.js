@@ -10,8 +10,10 @@ const twilioPhone = process.env.TWILIO_PHONE
 
 const client = new twilio(accountSid, authToken)
 
+app.set('view engine', 'pug')
+
 app.get('/', (req, res) => {
-  res.send('Server is up and running')
+  res.render('index')
 })
 
 app.post('/alert', (req, res) => {
